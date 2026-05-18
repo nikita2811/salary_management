@@ -7,3 +7,4 @@ model-bakery
 pytest-cov
 factory-boy
 ruff
+django-environ
