@@ -1,7 +1,8 @@
 import pytest
 from decimal import Decimal
 from django.utils import timezone
-from employees.models import Employee
+from employee.models import Employee
+import time
 
 
 # ── Fixtures 
@@ -240,6 +241,7 @@ class TestEmployeeLifecycle:
 
     def test_updated_at_changes_on_save(self, employee):
         original_updated_at = employee.updated_at
+        time.sleep(0.01) 
         employee.first_name = 'Jane'
         employee.save()
         employee.refresh_from_db()
