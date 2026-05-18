@@ -39,6 +39,7 @@ jobs:
       # ── Run migrations ───────────────────────────────────────────────────
       - name: Run migrations
         env:
+          SECRET_KEY: ${{ secrets.SECRET_KEY }}
           DJANGO_SETTINGS_MODULE: salary_management.settings
         run: |
           python manage.py migrate
